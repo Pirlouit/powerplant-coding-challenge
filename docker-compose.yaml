@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+    powerplan-challenge:
+        build:
+            context: ./PowerplantChallenge
+            dockerfile: ./Dockerfile
+        image: pirlouit/powerplan-challenge
+        container_name: powerplan-challenge
+        environment:
+            - ASPNETCORE_ENVIRONMENT=Development
+            - ASPNETCORE_URLS=http://+:8888
+        ports:
+            - '8888:8888'
